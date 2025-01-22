@@ -1,13 +1,13 @@
 """
-Модуль инициализации Flask-приложения.
+Module for initializing the Flask application.
 
-Создает экземпляр приложения Flask и настраивает его.
+Creates an instance of the Flask application and configures it.
 """
 
 from flask import Flask
 
-# Создание экземпляра Flask-приложения
+# Create an instance of the Flask application
 app = Flask(__name__)
 
-# Импорт маршрутов после создания приложения, чтобы избежать циклических импортов
+# Import routes after creating the app to avoid circular imports
 from app import routes

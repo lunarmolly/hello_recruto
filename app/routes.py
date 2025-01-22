@@ -1,7 +1,7 @@
 """
-Модуль маршрутов Flask-приложения.
+Module for defining routes in the Flask application.
 
-Содержит обработчики запросов для различных URL.
+Contains request handlers for various URLs.
 """
 
 from flask import request
@@ -10,14 +10,14 @@ from app import app
 @app.route('/')
 def hello():
     """
-    Обработчик для корневого URL (/).
+    Handler for the root URL (/).
 
-    Возвращает сообщение с подставленными значениями из GET-запроса.
-    Если параметры не переданы, используются значения по умолчанию.
+    Returns a message with values substituted from the GET request.
+    If parameters are not provided, default values are used.
 
-    Returns:
-        str: Сообщение в формате "Hello {name}! {message}!".
+    :returns: A message in the format "Hello {name}! {message}!".
+    :rtype: str
     """
-    name = request.args.get('name', 'Recruto')  # Получаем значение параметра 'name' из запроса
-    message = request.args.get('message', 'Давай дружить')  # Получаем значение параметра 'message' из запроса
+    name = request.args.get('name', 'Recruto')  # Get the value of the 'name' parameter from the request
+    message = request.args.get('message', 'Let\'s be friends')  # Get the value of the 'message' parameter from the request
     return f'Hello {name}! {message}!'
